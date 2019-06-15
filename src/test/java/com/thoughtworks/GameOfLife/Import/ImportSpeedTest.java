@@ -8,7 +8,9 @@ public class ImportSpeedTest {
 
     @Test
     public void convertInttoSecond() {
-        int num=20;
-        assertEquals(1000,ImportSpeed.convertInttoSecond(num));
+        assertEquals(1000,ImportSpeed.convertInttoSecond(20));
+        assertEquals(500,ImportSpeed.convertInttoSecond(10));
+        assertEquals(50,ImportSpeed.convertInttoSecond(1));
+        assertEquals(50,ImportSpeed.convertInttoSecond(0));
     }
 }

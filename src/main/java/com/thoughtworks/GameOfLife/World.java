@@ -2,7 +2,9 @@ package com.thoughtworks.GameOfLife;
 
 
 import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
+import com.thoughtworks.GameOfLife.Import.ImportSpeed;
 import com.thoughtworks.GameOfLife.Utils.PathUtils;
+import org.omg.CORBA.INTERNAL;
 
 import java.io.BufferedInputStream;
 import java.util.Scanner;
@@ -115,10 +117,13 @@ public class World {
     }
 
     public static void main(String[] args) {
-        System.out.println("Please Input Your Init Txt Path:");
+        System.out.println("Please Input Your Init Txt Path And Speed in Two Lines:");
 
         Scanner scn = new Scanner(new BufferedInputStream(System.in));
         String txtPath = scn.nextLine();
+
+        int speedNum = Integer.valueOf(scn.nextLine().trim());
+        int AcutalMillSeconds = ImportSpeed.convertInttoSecond(speedNum);
 
         if (!PathUtils.isPathLegal(txtPath)) {
             txtPath = DEFAULT_TXT_PATH;
@@ -126,10 +131,16 @@ public class World {
 
         World world = new World(ImportInitTxt.convertTxttoMatrix(txtPath));
 
-        for (int i = 0; i < 1000; i++) {
-            printMatrix(world.getMatrix());
-            world.generation();
+        try{
+            for (int i = 0; i < 50; i++) {
+                Thread.sleep(AcutalMillSeconds);
+                printMatrix(world.getMatrix());
+                world.generation();
+            }
+        } catch(InterruptedException e) {
+            e.printStackTrace();
         }
+
 
     }
 
