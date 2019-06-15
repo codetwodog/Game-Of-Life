@@ -1,7 +1,7 @@
 package com.thoughtworks.GameOfLife;
 
 
-import com.thoughtworks.GameOfLife.Utils.ImportInitTxt;
+import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
 import com.thoughtworks.GameOfLife.Utils.PathUtils;
 
 import java.io.BufferedInputStream;
@@ -126,7 +126,7 @@ public class World {
 
         World world = new World(ImportInitTxt.convertTxttoMatrix(txtPath));
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000; i++) {
             printMatrix(world.getMatrix());
             world.generation();
         }

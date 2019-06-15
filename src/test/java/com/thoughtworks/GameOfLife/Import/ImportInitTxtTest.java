@@ -1,10 +1,8 @@
-package com.thoughtworks.GameOfLife.Utils;
+package com.thoughtworks.GameOfLife.Import;
 
+import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
-import java.util.Scanner;
 
 import static org.junit.Assert.*;
 

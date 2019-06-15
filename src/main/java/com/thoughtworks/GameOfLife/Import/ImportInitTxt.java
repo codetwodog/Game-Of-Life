@@ -1,4 +1,4 @@
-package com.thoughtworks.GameOfLife.Utils;
+package com.thoughtworks.GameOfLife.Import;
 
 import java.io.*;
 
