@@ -18,7 +18,9 @@ public class WorldTest {
 
     @Test
     public void generation() {
-           assertArrayEquals(matrixNext,new World().generation());
+        World  world = new World(matrix.length, matrix[0].length, matrix);
+        world.generation();
+        assertArrayEquals(matrixNext,world.getMatrix());
     }
 
 

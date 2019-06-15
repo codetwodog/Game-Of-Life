@@ -7,18 +7,45 @@ public class World {
 
     private int[][] matrix;
 
-    public World(){
-       this.width = 200;
-       this.height = 100;
+
+    public int getWidth() {
+        return width;
     }
 
-    public World(int width, int height,int [][] matrix){
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int[][] getMatrix() {
+        return matrix;
+    }
+
+    public void setMatrix(int[][] matrix) {
+        this.matrix = matrix;
+    }
+
+
+    public World(){
+        this.width = 200;
+        this.height = 100;
+    }
+
+
+    public World(int width, int height, int [][] matrix){
         this.width = width;
         this.height = height;
         this.matrix = matrix;
     }
 
-    public int[][] generation(){
+    public void generation(){
         int[][] temp = new int[this.width][this.height];
 
         for(int i=0; i<this.width; i++) {
@@ -35,7 +62,7 @@ public class World {
         }
 
         this.matrix = temp;
-        return  matrix;
+
     }
 
     public int countNeighbour(int x, int y){
