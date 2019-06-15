@@ -16,7 +16,6 @@ public class ImportInitTxtTest {
 
     @Test
     public void convertTxttoMatrix() {
-        System.out.println("please input:");
         int[][] matrix = {
                 {1, 0, 1, 0, 1, 0},
                 {1, 0, 1, 0, 1, 0},
