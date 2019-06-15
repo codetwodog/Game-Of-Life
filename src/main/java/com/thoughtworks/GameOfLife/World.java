@@ -1,4 +1,5 @@
 package  com.thoughtworks.GameOfLife;
+
 public class World {
     //数组的宽,高，二维矩阵
     private int width;
