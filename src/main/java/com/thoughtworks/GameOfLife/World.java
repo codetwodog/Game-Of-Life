@@ -119,27 +119,6 @@ public class World {
     public static void main(String[] args) {
         System.out.println("Please Input Your Init Txt Path And Speed in Two Lines:");
 
-        Scanner scn = new Scanner(new BufferedInputStream(System.in));
-        String txtPath = scn.nextLine();
-
-        int speedNum = Integer.valueOf(scn.nextLine().trim());
-        int AcutalMillSeconds = ImportSpeed.convertInttoSecond(speedNum);
-
-        if (!PathUtils.isPathLegal(txtPath)) {
-            txtPath = DEFAULT_TXT_PATH;
-        }
-
-        World world = new World(ImportInitTxt.convertTxttoMatrix(txtPath));
-
-        try{
-            for (int i = 0; i < 50; i++) {
-                Thread.sleep(AcutalMillSeconds);
-                printMatrix(world.getMatrix());
-                world.generation();
-            }
-        } catch(InterruptedException e) {
-            e.printStackTrace();
-        }
 
 
     }
