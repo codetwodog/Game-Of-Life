@@ -2,7 +2,7 @@ package com.thoughtworks.GameOfLife.Import;
 
 public class ImportSpeed {
 
-    private final static float DEFAULT_TIME = 0.05F;
+    private final static int DEFAULT_TIME = 1500;
 
     /**
     读取输入的speed档位，转化为系统对应的毫秒数
@@ -12,8 +12,7 @@ public class ImportSpeed {
     @data: 2019/6/16
      */
     public static int convertInttoSecond(int num) {
-        num = Math.max(1, num);
-        int actualMillSeconds = num * (int) (DEFAULT_TIME * 1000);
-        return actualMillSeconds;
+        int gear = DEFAULT_TIME - 50 * num;
+        return gear;
     }
 }
