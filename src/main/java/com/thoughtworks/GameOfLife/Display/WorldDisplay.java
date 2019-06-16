@@ -20,8 +20,11 @@ import javax.swing.ImageIcon;
 
 
 public class WorldDisplay extends JFrame {
-
-
+    /**
+     *
+     * @author:
+     * @data: 2019/6/16
+     */
     private volatile boolean running = false;
     private final static int DEFAULT_DURATION = 50;
     private volatile int duration = DEFAULT_DURATION;
@@ -98,6 +101,8 @@ public class WorldDisplay extends JFrame {
 
     /**
      * 迭代展示布局
+     * @author:
+     * @param: 2019/6/16
      */
     private void setWorldPanel() {
         int rows = world.getHeight();//高就是行数
@@ -128,6 +133,8 @@ public class WorldDisplay extends JFrame {
 
     /**
      * 显示下一代
+     * @author:
+     * @param: 2019/6/16
      */
     private void updateWorldPanel() {
         world.generation();
@@ -148,6 +155,8 @@ public class WorldDisplay extends JFrame {
 
     /**
      * 选择txt文件
+     * @author:
+     * @data: 2019/6/16
      */
     private class InitTxtFileActionListener implements ActionListener {
         @Override
@@ -167,9 +176,10 @@ public class WorldDisplay extends JFrame {
             }
         }
     }
-
     /**
      * 随机初始化一个状态
+     * @author:
+     * @data: 2019/6/16
      */
     private class RandomInitActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -181,6 +191,10 @@ public class WorldDisplay extends JFrame {
         }
     }
 
+    /**
+     * @author:
+     * @param: 2019/6/16
+     */
     private class RunGame implements Runnable {
         @Override
         public void run() {
@@ -196,7 +210,11 @@ public class WorldDisplay extends JFrame {
         }
     }
 
-    //开始迭代显示
+    /**
+     * 开始迭代显示
+     * @author:
+     * @data : 2019/6/16
+     */
     private class StartActionListener implements ActionListener {
 
         @Override
@@ -215,7 +233,11 @@ public class WorldDisplay extends JFrame {
         }
     }
 
-    //暂停操作
+    /**
+     * 暂停操作
+     * @author:
+     * @data: 2019/6/16
+     */
     private class StopActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

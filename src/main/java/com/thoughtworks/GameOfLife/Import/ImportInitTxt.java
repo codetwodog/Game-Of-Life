@@ -5,7 +5,13 @@ import com.thoughtworks.GameOfLife.World;
 import java.io.*;
 //（1） 导入初始化
 public class ImportInitTxt {
-
+    /**
+    读取txt文件，并返回对应int二维数组大小的World。
+    @params: String txtPath 传入的txt文件路径
+    @return: World 返回txtPath内数组大小对应的World对象
+    @author: zhangyi
+    @data: 2019/6/16
+     */
     public static World convertTxttoMatrix(String txtPath) {
         int width = 0, height = 0;
         World world=null;
@@ -42,8 +48,13 @@ public class ImportInitTxt {
         return world;
     }
 
-    //（2）随机初始化
-
+    /**
+    随机初始化
+    @param:
+    @return:
+    @author:
+    @data:2019/6/16
+     */
     public static World randomInitWorld(){
         int random_height = (int)(Math.random()*100);//高是行数
         //int random_width = (int)(Math.random()*40);
