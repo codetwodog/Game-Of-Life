@@ -1,7 +1,7 @@
 package com.thoughtworks.GameOfLife.Display;
 
 import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
-import com.thoughtworks.GameOfLife.World;
+import com.thoughtworks.GameOfLife.Entity.World;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;

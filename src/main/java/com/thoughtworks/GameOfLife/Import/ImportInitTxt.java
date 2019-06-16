@@ -1,6 +1,6 @@
 package com.thoughtworks.GameOfLife.Import;
 
-import com.thoughtworks.GameOfLife.World;
+import com.thoughtworks.GameOfLife.Entity.World;
 
 import java.io.*;
 //（1） 导入初始化
@@ -12,7 +12,7 @@ public class ImportInitTxt {
     @author: zhangyi
     @data: 2019/6/16
      */
-    public static World convertTxttoMatrix(String txtPath) {
+    public static World convertTxttoWorld(String txtPath) {
         int width = 0, height = 0;
         World world=null;
         int[][] res = null;

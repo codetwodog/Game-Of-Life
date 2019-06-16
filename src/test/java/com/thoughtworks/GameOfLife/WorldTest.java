@@ -1,5 +1,6 @@
 package com.thoughtworks.GameOfLife;
 
+import com.thoughtworks.GameOfLife.Entity.World;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,5 +1,12 @@
-package com.thoughtworks.GameOfLife;
+package com.thoughtworks.GameOfLife.Entity;
 
+
+import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
+import com.thoughtworks.GameOfLife.Import.ImportSpeed;
+import com.thoughtworks.GameOfLife.Utils.PathUtils;
+
+import java.io.BufferedInputStream;
+import java.util.Scanner;
 
 public class World {
     private final static String DEFAULT_TXT_PATH = "src/Resource/default.txt";
@@ -173,9 +180,31 @@ public class World {
     /*
     Game of Cell V1.0 控制台版本
      */
+
     public static void main(String[] args) {
         System.out.println("Please Input Your Init Txt Path And Speed in Two Lines:");
 
+        Scanner scn = new Scanner(new BufferedInputStream(System.in));
+        String txtPath = scn.nextLine();
+
+        int speedNum = Integer.valueOf(scn.nextLine().trim());
+        int AcutalMillSeconds = ImportSpeed.convertInttoSecond(speedNum);
+
+        if (!PathUtils.isPathLegal(txtPath)) {
+            txtPath = DEFAULT_TXT_PATH;
+        }
+
+        World world = ImportInitTxt.convertTxttoWorld(txtPath);
+
+        try{
+            for (int i = 0; i < 50; i++) {
+                Thread.sleep(AcutalMillSeconds);
+                printMatrix(world.getMatrix());
+                world.generation();
+            }
+        } catch(InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
     }
