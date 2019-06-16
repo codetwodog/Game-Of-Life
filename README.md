@@ -10,6 +10,8 @@ Pair programming practice in thought works
     2. countNeighbour() 获取单个cell的周围8个方向的细胞存活数量
     3. getCellState() 实现边界判断，获取matrix中对于坐标的cell的存活状态
 4. 实现 "开发者模式" 支持控制台控制游戏，记录每次迭代的过程，帮助开发者们更好的理解cell们迭代的每一步过程！
+# 算法实现细节
+1. generation()规则：（1）周围有3个活细胞，下一代活。（2）周围2个活细胞且目标细胞为活，下一代活。（3）其它 ，下一代均为死
 
 ## 实现界面展示游戏
 1. 用户UI界面游戏画面，排列工整的Button，与分割统一的UI图标。
