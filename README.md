@@ -1,6 +1,6 @@
 # ThoughtWorksProject
 Pair programming practice in thought works
-
+# pair 齐瑾浩  张翼
 # 需求实现
 ## 实现Game Of Life 核心逻辑。
 1. 构造World类，用来模拟整个cell族群存活的世界。
