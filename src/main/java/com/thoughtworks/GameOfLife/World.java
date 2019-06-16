@@ -1,18 +1,10 @@
 package com.thoughtworks.GameOfLife;
 
 
-import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
-import com.thoughtworks.GameOfLife.Import.ImportSpeed;
-import com.thoughtworks.GameOfLife.Utils.PathUtils;
-import org.omg.CORBA.INTERNAL;
-
-import java.io.BufferedInputStream;
-import java.util.Scanner;
-
 public class World {
     private final static String DEFAULT_TXT_PATH = "src/Resource/default.txt";
 
-    //数组的宽,高，二维矩阵
+
     private int width;
 
     private int height;
@@ -46,27 +38,27 @@ public class World {
 
 
     public World() {
-        this.width = 200;
-        this.height = 100;
+        this.width = 200;//列数
+        this.height = 100;//行数
     }
 
     public World(int[][] matrix) {
-        this.width = matrix.length;
-        this.height = matrix[0].length;
+        this.width = matrix[0].length;
+        this.height = matrix.length;
         this.matrix = matrix;
     }
 
-    public World(int width, int height, int[][] matrix) {
+    public World(int height, int width, int[][] matrix) {
         this.width = width;
         this.height = height;
         this.matrix = matrix;
     }
 
-    public void generation() {
-        int[][] temp = new int[this.width][this.height];
+    public World generation() {
+        int[][] temp = new int[this.height][this.width];
 
-        for (int i = 0; i < this.width; i++) {
-            for (int j = 0; j < this.height; j++) {
+        for (int i = 0; i < this.height; i++) {
+            for (int j = 0; j < this.width; j++) {
                 int count = countNeighbour(i, j);
                 if (count == 3) {
                     temp[i][j] = 1;
@@ -79,6 +71,9 @@ public class World {
         }
 
         this.matrix = temp;
+        this.height=height;
+        this.width=width;
+        return  this;
 
     }
 
@@ -98,7 +93,7 @@ public class World {
     }
 
     public int getCellState(int x, int y) {
-        if (x < 0 || x >= this.width || y < 0 || y >= this.height) {
+        if (x < 0 || x >= this.height || y < 0 || y >= this.width) {
             return 0;
         } else {
             return this.matrix[x][y];

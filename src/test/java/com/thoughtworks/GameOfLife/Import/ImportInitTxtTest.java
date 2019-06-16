@@ -30,7 +30,7 @@ public class ImportInitTxtTest {
 
 
         //前两个数字判断，
-        assertArrayEquals(matrix, new ImportInitTxt().convertTxttoMatrix(s));
+        assertArrayEquals(matrix, new ImportInitTxt().convertTxttoMatrix(s).getMatrix());
 
 
     }

@@ -1,13 +1,11 @@
 package com.thoughtworks.myapp;
 
-/**
- * Hello world!
- *
- */
+import com.thoughtworks.GameOfLife.Display.WorldDisplay;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        new WorldDisplay().setVisible(true);
     }
 }
