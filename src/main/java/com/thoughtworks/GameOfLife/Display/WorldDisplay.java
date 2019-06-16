@@ -47,42 +47,50 @@ public class WorldDisplay extends JFrame {
         InitFileButton.setIcon(icon_file);
         InitFileButton.setPreferredSize(new Dimension(110, 35));
         InitFileButton.addActionListener(new InitTxtFileActionListener());
-
-        //显示滑块名称
+        /**
+         * 显示滑块名称按钮
+         */
         speedButton = new JButton();
         speedButton.setEnabled(false);
         ImageIcon icon_speed = new ImageIcon("src/Resource/speed_icon.png");
         speedButton.setIcon(icon_speed);
         speedButton.setPreferredSize(new Dimension(50, 50));
-        //写滑块控制速度
+        /**
+         * 控制速度的滑块
+         */
         speedJSlider = new JSlider(0, 2000, 0);//0-20初始值是0
         speedJSlider.setPreferredSize(new Dimension(100, 50));
         // jSlider.setMajorTickSpacing(5);//数字显示范围
         speedJSlider.setMinorTickSpacing(1);
         speedJSlider.setPaintLabels(true);
         speedJSlider.setPaintTicks(true);
-
-
+        /**
+         * 控制开始按钮
+         */
         startButton = new JButton();
         ImageIcon icon = new ImageIcon("src/Resource/start_icon.png");
         startButton.setIcon(icon);
         startButton.setPreferredSize(new Dimension(100, 35));
         startButton.addActionListener(new StartActionListener());
-
+        /**
+         * 控制暂停按钮
+         */
         stopButton = new JButton();
         ImageIcon icon_pause = new ImageIcon("src/Resource/stop_icon.png");
         stopButton.setIcon(icon_pause);
         stopButton.setPreferredSize(new Dimension(100, 35));
         stopButton.addActionListener(new StopActionListener());
-
-
+        /**
+         * 控制随机初始化
+         */
         randomButton = new JButton();
         ImageIcon icon_random = new ImageIcon("src/Resource/random_icon.png");
         randomButton.setIcon(icon_random);
         randomButton.setPreferredSize(new Dimension(100, 35));
         randomButton.addActionListener(new RandomInitActionListener());
-
-
+        /**
+         * 整合组件
+         */
         controlPanel = new JPanel();
         controlPanel.add(speedButton);
         controlPanel.add(speedJSlider);
