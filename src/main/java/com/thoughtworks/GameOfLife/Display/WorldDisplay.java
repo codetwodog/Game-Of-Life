@@ -1,7 +1,9 @@
 package com.thoughtworks.GameOfLife.Display;
 
 import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
+import com.thoughtworks.GameOfLife.Utils.ExtendedWorldUtils;
 import com.thoughtworks.GameOfLife.World;
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -15,7 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 import javax.swing.ImageIcon;
-
 
 
 public class WorldDisplay extends JFrame {
@@ -111,7 +112,7 @@ public class WorldDisplay extends JFrame {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 JButton jButton = new JButton();
-                jButton.setSize(new Dimension(2,2));
+                jButton.setSize(new Dimension(2, 2));
                 if (matrix[i][j] == 1) {
                     jButton.setBackground(Color.RED);
                 } else {
@@ -160,6 +161,7 @@ public class WorldDisplay extends JFrame {
                 //读取文件，初始化cellMatrix
                 String filepath = fileChooser.getSelectedFile().getPath();
                 world = ImportInitTxt.convertTxttoMatrix(filepath);
+                world = ExtendedWorldUtils.extendedworld(world);
                 //初始化cellPanel
                 setWorldPanel();
             }
