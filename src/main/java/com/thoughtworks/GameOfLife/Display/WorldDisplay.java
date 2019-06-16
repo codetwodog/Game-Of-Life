@@ -1,9 +1,8 @@
 package com.thoughtworks.GameOfLife.Display;
 
 import com.thoughtworks.GameOfLife.Import.ImportInitTxt;
+import com.thoughtworks.GameOfLife.Entity.World;
 import com.thoughtworks.GameOfLife.Utils.ExtendedWorldUtils;
-import com.thoughtworks.GameOfLife.World;
-
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -169,8 +168,12 @@ public class WorldDisplay extends JFrame {
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 //读取文件，初始化cellMatrix
                 String filepath = fileChooser.getSelectedFile().getPath();
+<<<<<<< HEAD
+                world = ImportInitTxt.convertTxttoWorld(filepath);
+=======
                 world = ImportInitTxt.convertTxttoMatrix(filepath);
                 world = ExtendedWorldUtils.extendedworld(world);
+>>>>>>> temp
                 //初始化cellPanel
                 setWorldPanel();
             }
