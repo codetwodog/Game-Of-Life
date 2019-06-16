@@ -1,2 +1,3 @@
 # ThoughtWorksProject
-Pair programming practice in thought work
+Pair programming practice in thought works
+
