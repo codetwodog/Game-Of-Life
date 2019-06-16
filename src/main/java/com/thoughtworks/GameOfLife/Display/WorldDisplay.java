@@ -168,7 +168,7 @@ public class WorldDisplay extends JFrame {
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 //读取文件，初始化cellMatrix
                 String filepath = fileChooser.getSelectedFile().getPath();
-                world = ImportInitTxt.convertTxttoMatrix(filepath);
+                world = ImportInitTxt.convertTxttoWorld(filepath);
                 //初始化cellPanel
                 setWorldPanel();
             }
