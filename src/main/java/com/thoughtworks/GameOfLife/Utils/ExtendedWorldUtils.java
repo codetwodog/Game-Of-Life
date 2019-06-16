@@ -1,6 +1,6 @@
 package com.thoughtworks.GameOfLife.Utils;
 
-import com.thoughtworks.GameOfLife.World;
+import com.thoughtworks.GameOfLife.Entity.World;
 
 public class ExtendedWorldUtils {
     public static World extendedworld(World world) {
