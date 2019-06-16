@@ -12,6 +12,12 @@ Pair programming practice in thought works
 4. 实现 "开发者模式" 支持控制台控制游戏，记录每次迭代的过程，帮助开发者们更好的理解cell们迭代的每一步过程！
 
 ## 实现界面展示游戏
+1. 用户UI界面游戏画面，排列工整的Button，与分割统一的UI图标。
+![avatar](Image/1.png)
+2. 用户UI界面读取TXT文件，指定游戏初始状态，用户性好的文件读取入口。
+![avatar](Image/2.png)
+3. 开发者版本（GEEK风格）用户界面展示。黑白配色，适合小规模cell演变。
+![avatar](Image/3.png)
 
 ## 实现预先指定状态
 1. 游戏提供用户或开发者指定自己希望的游戏初始状态，通过txt文件，程序会解析对于的txt文件，同时，会对非法的txt文件路径进行修改。如果用户没有输入相应的txt文件路径，或者错误的路径。游戏会读取默认的初始化文件。
@@ -32,3 +38,14 @@ Pair programming practice in thought works
     4. Utils：核心工具类，完成程序中必要功能。
 5. 程序注释清楚，可阅读性好。
 6. 采用Git协同开发。commit历史完整，详细。
+7. 使用maven构建项目，进行jar包管理
+8. 使用Junit进行单元测试
+9. 测试驱动开发，先写需求测试，验证不通过，实现需求方法，重新跑测试用例，绿灯提交。
+
+## 一些问题
+1.算法使用暴力求解，没有进行优化。
+2.控制速度的设计，在小规模实验下很流畅，但是大规模实验会卡顿，大规模指的是细胞数量巨大，算法运行时间和线程休止时间需要控制。
+
+## 用户使用手册
+1. 用户UImain函数入口：com.thoughtworks.myapp.App.main
+2. 开发者模式main函数入口：com.thoughtworks.GameOfLife.Entity.World.main
