@@ -1,4 +1,4 @@
-# ThoughtWorksProject
+# Game-Of-Life
 Pair programming practice in thought works
 # pair 齐瑾浩  张翼
 # 需求实现
